@@ -33,12 +33,21 @@ npm install furaffinity-api
 使用 cookie 登录 furaffinity
 
 ```js
+<<<<<<< HEAD
 import { Login } from "furaffinity-api";
 // or
 const { Login } = require("furaffinity-api");
 
 // to allow all results to be accessible, add your cookies
 Login("cookie_a", "cookie_b");
+=======
+import { Login } from "furaffinity-api"
+// or
+const { Login } = require("furaffinity-api")
+
+// to allow all results to be accessible, add your cookies
+Login("cookie_a", "cookie_b")
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### Search(query: string, options: SearchOptions)
@@ -61,6 +70,7 @@ Search('search query', { /** SearchOptions */ type?, rating?, page? }).then(res 
 获取浏览页作品
 
 ```js
+<<<<<<< HEAD
 import { Browse } from "furaffinity-api";
 
 Browse({
@@ -71,6 +81,18 @@ Browse({
     // 作品详情
   });
 });
+=======
+import { Browse } from "furaffinity-api"
+
+Browse({
+  /** BrowseOptions */
+}).then((res) => {
+  // 结果
+  res[0].getSubmission().then((submission) => {
+    // 作品详情
+  })
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### Submission(id: string)
@@ -78,11 +100,19 @@ Browse({
 获取特定的作品
 
 ```js
+<<<<<<< HEAD
 import { Submission } from "furaffinity-api";
 
 Submission("1234567890").then(res => {
   // res is a Submission
 });
+=======
+import { Submission } from "furaffinity-api"
+
+Submission("1234567890").then((res) => {
+  // res is a Submission
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### User()
@@ -90,11 +120,19 @@ Submission("1234567890").then(res => {
 获取当前用户信息
 
 ```js
+<<<<<<< HEAD
 import { User } from "furaffinity-api";
 
 User().then(user => {
   // console.log(user);
 });
+=======
+import { User } from "furaffinity-api"
+
+User().then((user) => {
+  // console.log(user);
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### Author(id: string)
@@ -102,6 +140,7 @@ User().then(user => {
 获取某个作者的用户信息
 
 ```js
+<<<<<<< HEAD
 import { Author, WatchingList } from "furaffinity-api";
 
 Author("user_id").then(res => {
@@ -111,6 +150,17 @@ Author("user_id").then(res => {
     // 查询该作者的关注列表
   });
 });
+=======
+import { Author, WatchingList } from "furaffinity-api"
+
+Author("user_id").then((res) => {
+  // 某作者信息
+  // 包含 id, name, url and avatar(可能为 undefined)
+  WatchingList(res.id).then((list) => {
+    // 查询该作者的关注列表
+  })
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### Gallery(id: string)
@@ -118,6 +168,7 @@ Author("user_id").then(res => {
 获取某用户的画廊
 
 ```js
+<<<<<<< HEAD
 import { Gallery } from "furaffinity-api";
 
 Gallery("author_id").then(res => {
@@ -126,6 +177,16 @@ Gallery("author_id").then(res => {
     // 作品详情
   });
 });
+=======
+import { Gallery } from "furaffinity-api"
+
+Gallery("author_id").then((res) => {
+  // 结果
+  res[0].getSubmission().then((submission) => {
+    // 作品详情
+  })
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### Scraps(id: string)
@@ -133,6 +194,7 @@ Gallery("author_id").then(res => {
 获取某用户废弃作品
 
 ```js
+<<<<<<< HEAD
 import { Scraps } from "furaffinity-api";
 
 Scraps("author_id").then(res => {
@@ -141,6 +203,16 @@ Scraps("author_id").then(res => {
     // 作品详情
   });
 });
+=======
+import { Scraps } from "furaffinity-api"
+
+Scraps("author_id").then((res) => {
+  // 结果
+  res[0].getSubmission().then((submission) => {
+    // 作品详情
+  })
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### Submissions()
@@ -148,6 +220,7 @@ Scraps("author_id").then(res => {
 根据时间线，获取作品详情
 
 ```js
+<<<<<<< HEAD
 import { Submissions } from "furaffinity-api";
 
 Submissions().then(res => {
@@ -156,6 +229,16 @@ Submissions().then(res => {
     // 某条作品详情
   });
 });
+=======
+import { Submissions } from "furaffinity-api"
+
+Submissions().then((res) => {
+  // 结果
+  res[0].getSubmission().then((submission) => {
+    // 某条作品详情
+  })
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### WatchingList(id: string)
@@ -163,11 +246,19 @@ Submissions().then(res => {
 获取某用户的关注列表（暂不能获取头像）
 
 ```js
+<<<<<<< HEAD
 import { WatchingList } from "furaffinity-api";
 
 WatchingList("author_id").then(list => {
   // 作者列表
 });
+=======
+import { WatchingList } from "furaffinity-api"
+
+WatchingList("author_id").then((list) => {
+  // 作者列表
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ### MyWatchingList()
@@ -176,11 +267,19 @@ WatchingList("author_id").then(list => {
 获取当前登录用户的关注列表（暂不能获取头像）
 
 ```js
+<<<<<<< HEAD
 import { MyWatchingList } from "furaffinity-api";
 
 MyWatchingList().then(list => {
   // 作者列表
 });
+=======
+import { MyWatchingList } from "furaffinity-api"
+
+MyWatchingList().then((list) => {
+  // 作者列表
+})
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 ## 测试
@@ -191,6 +290,7 @@ MyWatchingList().then(list => {
 export const options: ITestConfig = {
   loginOptions: {
     cookieA: "your cookie a", // your cookies
+<<<<<<< HEAD
     cookieB: "your cookie b"
   },
   watchOptions: {
@@ -201,6 +301,18 @@ export const options: ITestConfig = {
     userId: "your favorite author's userid"
   }
 };
+=======
+    cookieB: "your cookie b",
+  },
+  watchOptions: {
+    userId: "your userid",
+    shouldContainUserId: "userid you are watching",
+  },
+  authorOptions: {
+    userId: "your favorite author's userid",
+  },
+}
+>>>>>>> f69d413dc266180f97804fe5bfcf27c0342c0b74
 ```
 
 接着运行:
